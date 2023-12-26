@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Отправка сообщения боту</title>
+  <script src="https://telegram.org/js/telegram-web-app.js"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 1vh;
+      font-size: calc(1.5vw + 1vh);
+        background-color: black;
+        color: white;
+    }
+
+    textarea {
+      width: calc(100vw - 4vh);
+      height: 40vh;
+      resize: none;
+      margin-bottom: 2vh;
+      padding: 1.5vh;
+      font-size: calc(1.5vw + 1vh);
+      background-color: #444;
+      color: white;
+      border: none;
+      tab-size: 4;
+    }
+
+    button {
+      padding: 2vh 4vh;
+      font-size: calc(1.25vw + 1vh);
+      cursor: pointer;
+      background-color: #444;
+      color: white;
+      border: none;
+      margin-right: 1vh;
+    }
+  </style>
+</head>
+<body>
+  <textarea id="text" rows="50" cols="40" onkeydown="handleKeyPress(event)"></textarea><br>
+  <button onclick="addTab()">Tab</button>
+  <button onclick="addEnter()">Enter</button>
+  <button onclick="sendMessage()">Отправить</button>
+  <script>
+    let tg = window.Telegram.WebApp;
+    function addTab() {
+      var textarea = document.getElementById("text");
+      var cursorPosition = textarea.selectionStart;
+      var textBefore = textarea.value.substring(0, cursorPosition);
+      var textAfter = textarea.value.substring(cursorPosition);
+
+      textarea.value = textBefore + "\t" + textAfter;
+      textarea.focus();
+      textarea.setSelectionRange(cursorPosition + 1, cursorPosition + 1);
+    }
+
+    function addEnter() {
+      var textarea = document.getElementById("text");
+      var cursorPosition = textarea.selectionStart;
+      var textBefore = textarea.value.substring(0, cursorPosition);
+      var textAfter = textarea.value.substring(cursorPosition);
+
+      var lines = textBefore.split("\n");
+      var lastLine = lines[lines.length - 1];
+      var leadingSpaces = lastLine.match(/^[\s\t]*/)[0].replace(/    /g, '\t').length;
+
+      textarea.value = textBefore + "\n" + '\t'.repeat(leadingSpaces) + textAfter;
+      textarea.focus();
+      textarea.setSelectionRange(cursorPosition + leadingSpaces + 1, cursorPosition + leadingSpaces + 1);
+    }
+
+    function handleKeyPress(event) {
+      if (event.key === 'Enter') {
+        event.preventDefault();
+        addEnter();
+      }
+      if (event.key === 'Tab') {
+        event.preventDefault();
+        addTab();
+      }
+    }
+
+    function sendMessage() {
+      tg.sendData(document.getElementById("text").value)
+    }
+  </script>
+</body>
+</html>

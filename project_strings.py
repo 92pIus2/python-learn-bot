@@ -1,0 +1,47 @@
+runtime_error = "Runtime Error:\n\n"
+time_limit = "Time limit"
+error_on_test = "Error on test:\n"
+expected = "\nExpected: "
+found = "\nFound: "
+all_tests_passed = "All tests passed"
+bot_token = "???"
+web_app_keyboard_url = "https://testweb--fedorkukso.repl.co"
+keyboard_button_name = "Custom Input"
+status_default = ""
+folder_name_default = "test"
+status_waiting_for_task = "waiting for task"
+status_waiting_for_selection_task = "waiting for selection task"
+status_waiting_for_selection_task_for_test = "waiting for selection task for test"
+status_waiting_for_test_for = "waiting for test for"
+status_waiting_to_accept_admin_roots = "Waiting to accept admin roots to"
+status_waiting_for_task_name = "Waiting for the task name"
+status_waiting_for_task_description = "Waiting for description for:"
+status_waiting_for_task_example = "Waiting for example of:"
+no_task_name = "empty"
+message_no_task_found = "Can't find this task, try again"
+test_example = "Send test, using this format:\n" \
+                "a=5\n" \
+                "b=4\n" \
+                "9\n" \
+                "where last row is the answer"
+message_admin_request_accepted = "Your request accepted"
+message_admin_request_declined = "Your request declined"
+message_expected_yer_or_no = "Expected Y or N"
+message_send_task_description = "Ok, now send the task description"
+message_send_task_example = "Now send example code please"
+message_postfix_admin_roots_request = "requesting admin roots"
+task_prefix = "task_"
+done = "Done"
+start_message = "Hi! You can run any Python script without input here," \
+                "\nor you can learn programming with tasks using /tasks."
+admin_menu = "You can use following commands:\n" \
+              "/add_task for adding task to database\n" \
+              "/add_test for adding test to some task"
+no_admin_roots = "You don't have admin roots, use\n" \
+                  "/request_roots and wait to the answer"
+owner_id = "334600917"
+message_send_task_name = "Send the task name (only one word)"
+message_chose_the_task = "Chose the task\n"
+message_added_task = "Added task:"
+message_added_test = "Added test:"
+message_to = "to"
