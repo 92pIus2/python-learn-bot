@@ -17,7 +17,9 @@ def get_tasks():
     tasks_data = tasks_ref.get()
     if tasks_data:
         for task_key, task_data in tasks_data.items():
-            task = Task(task_data['name'], task_data['description'], task_data['example'])
+            task = Task(name=task_data['name'], description=task_data['description'],
+                        example=task_data['example'], func_name=task_data['func_name'],
+                        variables=task_data['variables'], solution=task_data['solution'])
             tests = []
             if task_data.get('tests'):
                 for test_key, test_data in task_data['tests'].items():
@@ -45,7 +47,6 @@ def add_user(user):
             'id': user.id,
             'username': user.username,
             'status': user.status,
-            'solved_tasks': user.solved_tasks
         })
 
 
@@ -55,6 +56,9 @@ def add_task(task):
         'description': task.description,
         'example': task.example,
         'name': task.name,
+        'func_name': task.func_name,
+        'variables': task.variables,
+        'solution': task.solution
     })
 
     for index, test in enumerate(task.tests):
@@ -85,6 +89,11 @@ def get_user_status_by_id(user_id):
     return None
 
 
+def update_task_func_name(task_name, new_func_name):
+    task_ref = tasks_ref.child(task_name)
+    task_ref.update({'func_name': new_func_name})
+
+
 def update_task_example(task_name, new_example):
     task_ref = tasks_ref.child(task_name)
     task_ref.update({'example': new_example})
@@ -93,6 +102,16 @@ def update_task_example(task_name, new_example):
 def update_task_description(task_name, new_description):
     task_ref = tasks_ref.child(task_name)
     task_ref.update({'description': new_description})
+
+
+def update_task_solution(task_name, new_solution):
+    task_ref = tasks_ref.child(task_name)
+    task_ref.update({'solution': new_solution})
+
+
+def update_task_variables(task_name, new_variables):
+    task_ref = tasks_ref.child(task_name)
+    task_ref.update({'variables': new_variables})
 
 
 def add_test_to_task(task_name, test):

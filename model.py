@@ -1,14 +1,13 @@
 class User:
-    def __init__(self, username, id, status=""):
+    def __init__(self, id, username="", status=""):
         self.id = id
         self.username = username
+        if username is None:
+            self.username = ""
         self.status = status
 
     def set_status(self, status):
         self.status = status
-
-    def solved_task(self, task):
-        self.solved_tasks.append(task)
 
 
 class Test:
