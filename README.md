@@ -1,4 +1,4 @@
-# Python Learn Bot 🐍
+# [Python Learn Bot 🐍](https://t.me/jbhwtest_bot)
 
 ## This telegram bot is able to help people learn how to program, learn algorithms and much more.
 ![IMG_3308](https://github.com/92pIus2/python-learn-bot/assets/100287060/21daaa47-addf-4c27-a3ba-96c285d62612)
@@ -12,3 +12,5 @@
 
 ## The goal of this project is to help people who do not have a computer learn the basics of programming and put them into practice.      
 ![IMG_3311](https://github.com/92pIus2/python-learn-bot/assets/100287060/41176b1e-3e99-4039-80c8-a34aa8f22b18)
+
+#### If something doesn't work, write to [me](https://t.me/f92plus2)
