@@ -21,7 +21,7 @@ status_waiting_for_task_func_name = "Waiting for func_name of:"
 status_waiting_for_task_variables = "Waiting for variables of:"
 status_waiting_for_task_solution = "Waiting for solution of:"
 no_task_name = "empty"
-message_no_task_found = "❌Can't find this task, try again"
+message_no_task_found = "❌This task was not found, please try again"
 message_task_already_exist = "❌Task with this name already exists, try again"
 test_example = "Send test, using this format:\n" \
                 "first_var=5\n" \
@@ -33,7 +33,7 @@ message_admin_request_accepted = "Your request accepted ✅"
 message_admin_request_declined = "Your request declined 🛑"
 message_expected_yer_or_no = "Expected Y or N"
 message_send_task_description = "Ok, now send the task description 📝"
-message_send_task_func_name = "Now send the name of function which user should implement"
+message_send_task_func_name = "Now send the name of function that the user should implement"
 message_send_task_variables = "Now send all variables for function, separated by whitespaces"
 message_send_task_example = "Now send example code please"
 message_send_task_solution = "Now send solution code please"
@@ -48,7 +48,7 @@ admin_menu = "You can use following commands:\n" \
               "/add_task for adding task to database\n" \
               "/add_test for adding test to some task"
 no_admin_roots = "You don't have admin roots, use\n" \
-                  "/request_roots and wait to the answer"
+                  "/request_roots and wait for the answer"
 owner_id = "334600917"
 message_send_task_name = "Send the task name"
 message_chose_the_task = "Chose the task:"

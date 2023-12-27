@@ -39,10 +39,10 @@ class Checker:
             except:
                 result = run_code(folder_name=self.task.func_name, file_name=self.id,
                                   code=self.code + "\nprint(" + self.task.func_name + "(" + test.to_input() + "))")
-                if not test.check_test(result):
-                    return project_strings.error_on_test + "\n" + str(
-                        test.to_input()) + "\n" + project_strings.expected + \
-                        str(test.answer) + "\n" + project_strings.found + str(result)
+            if not test.check_test(result):
+                return project_strings.error_on_test + "\n" + str(
+                    test.to_input()) + "\n" + project_strings.expected + \
+                    str(test.answer) + "\n" + project_strings.found + str(result)
         return project_strings.all_tests_passed
 
 
